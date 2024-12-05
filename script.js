@@ -11,6 +11,7 @@ while (n > 100) {
 
 let rowWidth = Math.ceil((480 - (2 * (n + 1))) / n);
 
+
 function createGrid(n) {
     
     grid.innerHTML = ""; // The grid should be empty first
@@ -31,7 +32,10 @@ function createGrid(n) {
             row.appendChild(square);
 
             square.addEventListener("mouseover", () => {
-                square.style.background = "black";
+                const r = Math.floor(Math.random() * 256); 
+                const g = Math.floor(Math.random() * 256);
+                const b = Math.floor(Math.random() * 256);
+                square.style.background = `rgb(${r}, ${g}, ${b})`;
             });
 
         }

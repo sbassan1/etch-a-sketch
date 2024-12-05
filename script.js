@@ -3,8 +3,11 @@ const grid = document.querySelector(".grid");
 
 const resetButton = document.querySelector("button");
 
-let n = parseInt(prompt("Please enter the number of boxes per side for the grid:", 16));
+let n = parseInt(prompt("Please enter the number of boxes per side for the grid: (less than 100 boxes please!)", 16));
 
+while (n > 100) {
+    n = parseInt(prompt("Please enter the number of boxes per side for the grid: (less than 100 boxes please!)", 16));
+}
 
 let rowWidth = Math.ceil((480 - (2 * (n + 1))) / n);
 
